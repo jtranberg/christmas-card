@@ -42,32 +42,55 @@ body
     background: linear-gradient(#fff, #d0f7f7 ) ;
     border: 1px solid #9d93f7;
     border-radius: 50%;
-    box-shadow: 0 10px 100px #fff;
+    box-shadow: 0 0 200px #fafcff;
+    animation: moon 6s ease-in forwards;
+}
+@keyframes moon {
+    0%
+    {
+top: 0;
+    }
+    100%
+    {
+top: 100;
+    }
+    
 }
 .container .circle::before
 {
     content: '';
     position: absolute;
+    justify-content: center;
+    align-items: center;
     inset: -200px -300px;
     background: url(/santa.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 600px;
+    z-index: 1;
     animation: animate 6s ease-in-out infinite;
 }
 @keyframes animate 
     {
         0%,100%
         {
-            transform: translateY(-30px);
+            transform: translateY(20px);
+            transform: translateX(40px);
         }
         25%
         {
             transform: translateY(10px);
+            
+
         }
         30%
         {
-            transform: translateY(-10px);
+            transform: translateY(10px);
+            transform: translateX(-20px);
+        }
+        50%
+        {
+            transform: translateX(-20px);
         }
         50%
         {
@@ -76,10 +99,17 @@ body
         80%
         {
             transform: translateY(-5px);
+            transform: translateX(-40px);
         }
         90%
         {
             transform: translateY(10px);
+        }
+        
+
+        {
+
+
         }
        
     }
@@ -103,19 +133,20 @@ body
 .container .snow span
 {
     position: relative;
-    min-width: 5px;
-    height: 5px;
+    min-width: 8px;
+    height: 4px;
     background: #fff;
-    border-radius: 50%;
+    border-radius: 46%;
     margin: 0 1vw;
-    box-shadow: -100px 20px 5px #fff, 100px 20px 10px #fff;
+    box-shadow: -100px 20px 5px #fff, 100px 20px 15px #fff;
     animation: animateSnow 15s linear infinite;
-    animation-duration: calc(75s / var(--i));
+    animation-duration: calc(10s / var(--i));
 }
 .container .snow span:nth-child(even)
 {
-    min-width: 10px;
-    height: 10px;
+    min-width: 20px;
+    height: 15px;
+    border-radius: 42%;
 }
 @keyframes animateSnow
 {
